@@ -22,7 +22,7 @@ function [] = task_2()
         89 78 7
         89 68 9
         89 58 7
-        99 89 0
+        99 89 8
         ];
     x0 = ones(length(works) * 2 - 1, 1);
     lb = zeros(length(works) * 2 - 1, 1);
@@ -40,15 +40,16 @@ function [] = task_2()
             m = length(works) + t2;
             c(end + 1) = -x(t1(1)) + x(t2(1)) + q / x(m);
         end
-        c(end + 1) = sum(x(length(works) + 1:end)) - 0.75 * (length(works) - 1);
-        ceq = 0;
+        ceq = sum(x(length(works) + 1:end)) - 0.75 * (length(works) - 1);
     end
 
     t_res = res(1:length(works));
     m_res = res(length(works) + 1:end);
     sum_m_res = sum(m_res);
+    mean_m_res = mean(m_res);
 
     disp(t_res);
     disp(m_res);
     disp(sum_m_res);
+    disp(mean_m_res);
 end
