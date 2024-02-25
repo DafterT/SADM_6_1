@@ -75,7 +75,7 @@ function [] = task_3_1()
 
     lb = zeros(x_len, 1);
 
-    x = intlinprog(f, (length(works) + 1):x_len, A, b, Aeq, beq, lb, ub);
+    x = intlinprog(f, (length(works) + 1):x_len, A, b, Aeq, beq, lb);
 
     disp(x)
 end
